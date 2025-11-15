@@ -1,38 +1,142 @@
-
-CREATE TABLE doughnuts (
-    name VARCHAR(10),
-    type VARCHAR(10),
-    price INT
+CREATE TABLE iris_dataset (
+  id INTEGER PRIMARY KEY,
+  sepal_length FLOAT8 NOT NULL,
+  sepal_width  FLOAT8 NOT NULL,
+  petal_length FLOAT8 NOT NULL,
+  petal_width  FLOAT8 NOT NULL,
+  target INT NOT NULL
 );
-INSERT INTO doughnuts VALUES ('apple', 'sweet', 5);
-INSERT INTO doughnuts VALUES ('pineapple', 'creamy', 8);
-INSERT INTO doughnuts VALUES ('banana', 'filled', 3);
-INSERT INTO doughnuts VALUES ('coconut', 'oily', 6);
-INSERT INTO doughnuts VALUES ('veggy', 'filled', 10);
-INSERT INTO doughnuts VALUES ('chocolate', 'creamy', 4);
-SELECT * FROM doughnuts;
-INSERT INTO doughnuts VALUES ('vanilla', 'sweet', 6);
-INSERT INTO doughnuts VALUES ('strawberry', 'oily', 4);
-INSERT INTO doughnuts VALUES ('peach', 'creamy', 5);
-INSERT INTO doughnuts VALUES ('air', 'filled',2);
-SELECT * FROM doughnuts;
-SELECT * from doughnuts order by price;
-SELECT * from doughnuts order by price desc;
-SELECT SUM(price) FROM doughnuts;
-SELECT min(price) FROM doughnuts;
-SELECT max(price) FROM doughnuts;
-SELECT avg(price) FROM doughnuts;
-SELECT count(type) FROM doughnuts;
-SELECT count(name) FROM doughnuts;
-SELECT max(price) FROM doughnuts group by type;
-SELECT type, max(price) FROM doughnuts group by type;
-SELECT distinct type FROM doughnuts;
-SELECT * from doughnuts order by price limit 5;
-update doughnuts set name= 'pro' where name='air';
-SELECT * from doughnuts;
-delete from doughnuts where name = 'pro';
-SELECT * from doughnuts;
-
-
+INSERT INTO iris_dataset VALUES (1, 5.1, 3.5, 1.4, 0.2, 0);
+INSERT INTO iris_dataset VALUES (2, 4.9, 3.0, 1.4, 0.2, 0);
+INSERT INTO iris_dataset VALUES (3, 4.7, 3.2, 1.3, 0.2, 0);
+INSERT INTO iris_dataset VALUES (4, 4.6, 3.1, 1.5, 0.2, 0);
+INSERT INTO iris_dataset VALUES (5, 5.0, 3.6, 1.4, 0.2, 0);
+INSERT INTO iris_dataset VALUES (6, 5.4, 3.9, 1.7, 0.4, 0);
+INSERT INTO iris_dataset VALUES (7, 4.6, 3.4, 1.4, 0.3, 0);
+INSERT INTO iris_dataset VALUES (8, 5.0, 3.4, 1.5, 0.2, 0);
+INSERT INTO iris_dataset VALUES (9, 4.4, 2.9, 1.4, 0.2, 0);
+INSERT INTO iris_dataset VALUES (10, 4.9, 3.1, 1.5, 0.1, 0);
+INSERT INTO iris_dataset VALUES (11, 5.4, 3.7, 1.5, 0.2, 0);
+INSERT INTO iris_dataset VALUES (12, 4.8, 3.4, 1.6, 0.2, 0);
+INSERT INTO iris_dataset VALUES (13, 4.8, 3.0, 1.4, 0.1, 0);
+INSERT INTO iris_dataset VALUES (14, 4.3, 3.0, 1.1, 0.1, 0);
+INSERT INTO iris_dataset VALUES (15, 5.8, 4.0, 1.2, 0.2, 0);
+INSERT INTO iris_dataset VALUES (16, 5.7, 4.4, 1.5, 0.4, 0);
+INSERT INTO iris_dataset VALUES (17, 5.4, 3.9, 1.3, 0.4, 0);
+INSERT INTO iris_dataset VALUES (18, 5.1, 3.5, 1.4, 0.3, 0);
+INSERT INTO iris_dataset VALUES (19, 5.7, 3.8, 1.7, 0.3, 0);
+INSERT INTO iris_dataset VALUES (20, 5.1, 3.8, 1.5, 0.3, 0);
+CREATE TABLE diabetes (
+  id INTEGER PRIMARY KEY,
+  pregnancies INT,
+  glucose INT,
+  blood_pressure INT,
+  skin_thickness INT,
+  insulin INT,
+  bmi FLOAT8,
+  diabetes_pedigree FLOAT8,
+  age INT,
+  outcome INT
+);
+INSERT INTO diabetes VALUES (1,6,148,72,35,0,33.6,0.627,50,1);
+INSERT INTO diabetes VALUES (2,1,85,66,29,0,26.6,0.351,31,0);
+INSERT INTO diabetes VALUES (3,8,183,64,0,0,23.3,0.672,32,1);
+INSERT INTO diabetes VALUES (4,1,89,66,23,94,28.1,0.167,21,0);
+INSERT INTO diabetes VALUES (5,0,137,40,35,168,43.1,2.288,33,1);
+INSERT INTO diabetes VALUES (6,5,116,74,0,0,25.6,0.201,30,0);
+INSERT INTO diabetes VALUES (7,3,78,50,32,88,31.0,0.248,26,1);
+INSERT INTO diabetes VALUES (8,10,115,0,0,0,35.3,0.134,29,0);
+INSERT INTO diabetes VALUES (9,2,197,70,45,543,30.5,0.158,53,1);
+INSERT INTO diabetes VALUES (10,8,125,96,0,0,0.0,0.232,54,1);
+INSERT INTO diabetes VALUES (11,4,110,92,0,0,37.6,0.191,30,0);
+INSERT INTO diabetes VALUES (12,10,168,74,0,0,38.0,0.537,34,1);
+INSERT INTO diabetes VALUES (13,10,139,80,0,0,27.1,1.441,57,0);
+INSERT INTO diabetes VALUES (14,1,189,60,23,846,30.1,0.398,59,1);
+INSERT INTO diabetes VALUES (15,5,166,72,19,175,25.8,0.587,51,1);
+INSERT INTO diabetes VALUES (16,7,100,0,0,0,30.0,0.484,32,1);
+INSERT INTO diabetes VALUES (17,0,118,84,47,230,45.8,0.551,31,1);
+INSERT INTO diabetes VALUES (18,7,107,74,0,0,29.6,0.254,31,1);
+INSERT INTO diabetes VALUES (19,1,103,30,38,83,43.3,0.183,33,0);
+INSERT INTO diabetes VALUES (20,1,115,70,30,96,34.6,0.529,32,1);
+INSERT INTO diabetes VALUES (21,3,126,88,41,235,39.3,0.704,27,0);
+INSERT INTO diabetes VALUES (22,8,99,84,0,0,35.4,0.388,50,0);
+INSERT INTO diabetes VALUES (23,7,196,90,0,0,39.8,0.451,41,1);
+INSERT INTO diabetes VALUES (24,9,119,80,35,0,29.0,0.263,29,1);
+INSERT INTO diabetes VALUES (25,11,143,94,33,146,36.6,0.254,51,1);
+INSERT INTO diabetes VALUES (26,10,125,70,26,115,31.1,0.205,41,1);
+INSERT INTO diabetes VALUES (27,7,147,76,0,0,39.4,0.257,43,1);
+INSERT INTO diabetes VALUES (28,1,97,66,15,140,23.2,0.487,22,0);
+INSERT INTO diabetes VALUES (29,13,145,82,19,110,22.2,0.245,57,0);
+INSERT INTO diabetes VALUES (30,5,117,92,0,0,34.1,0.337,38,0);
+INSERT INTO diabetes VALUES (31,5,109,75,26,0,36.0,0.546,60,0);
+INSERT INTO diabetes VALUES (32,3,158,76,36,245,31.6,0.851,28,1);
+INSERT INTO diabetes VALUES (33,3,88,58,11,54,24.8,0.267,22,0);
+INSERT INTO diabetes VALUES (34,6,92,92,0,0,19.9,0.188,28,0);
+INSERT INTO diabetes VALUES (35,10,122,78,31,0,27.6,0.512,45,0);
+INSERT INTO diabetes VALUES (36,4,103,60,33,192,24.0,0.966,33,0);
+INSERT INTO diabetes VALUES (37,11,138,76,0,0,33.2,0.420,35,0);
+INSERT INTO diabetes VALUES (38,9,102,76,37,0,32.9,0.665,46,1);
+INSERT INTO diabetes VALUES (39,2,90,68,42,0,38.2,0.503,27,1);
+INSERT INTO diabetes VALUES (40,4,111,72,47,207,37.1,1.390,56,1);
+INSERT INTO diabetes VALUES (41,3,180,64,25,70,34.0,0.271,26,0);
+INSERT INTO diabetes VALUES (42,7,133,84,0,0,40.2,0.696,37,0);
+INSERT INTO diabetes VALUES (43,7,106,92,18,0,22.7,0.235,48,0);
+INSERT INTO diabetes VALUES (44,9,171,110,24,240,45.4,0.721,54,1);
+INSERT INTO diabetes VALUES (45,7,159,64,0,0,27.4,0.294,40,0);
+INSERT INTO diabetes VALUES (46,0,180,66,39,0,42.0,1.893,25,1);
+INSERT INTO diabetes VALUES (47,1,146,56,0,0,29.7,0.564,29,0);
+INSERT INTO diabetes VALUES (48,2,71,70,27,0,28.0,0.586,22,0);
+INSERT INTO diabetes VALUES (49,7,103,66,32,0,39.1,0.344,31,1);
+INSERT INTO diabetes VALUES (50,7,105,0,0,0,0.0,0.305,24,0);
+INSERT INTO diabetes VALUES (51,1,103,80,11,82,19.4,0.491,22,0);
+INSERT INTO diabetes VALUES (52,1,101,50,15,36,24.2,0.526,26,0);
+INSERT INTO diabetes VALUES (53,5,88,66,21,23,24.4,0.342,30,0);
+INSERT INTO diabetes VALUES (54,8,176,90,34,300,33.7,0.467,58,1);
+INSERT INTO diabetes VALUES (55,7,150,66,42,342,34.7,0.718,42,0);
+INSERT INTO diabetes VALUES (56,1,73,50,10,0,23.0,0.248,21,0);
+INSERT INTO diabetes VALUES (57,7,187,68,39,304,37.7,0.254,41,1);
+INSERT INTO diabetes VALUES (58,0,100,88,60,110,46.8,0.962,31,0);
+INSERT INTO diabetes VALUES (59,0,146,82,0,0,40.5,1.781,44,0);
+INSERT INTO diabetes VALUES (60,0,105,64,41,142,41.5,0.173,22,0);
+INSERT INTO diabetes VALUES (61,2,84,0,0,0,0.0,0.304,21,0);
+INSERT INTO diabetes VALUES (62,8,133,72,0,0,32.9,0.270,39,1);
+INSERT INTO diabetes VALUES (63,5,44,62,0,0,25.0,0.587,36,0);
+INSERT INTO diabetes VALUES (64,2,141,58,34,128,25.4,0.699,24,0);
+INSERT INTO diabetes VALUES (65,7,114,66,0,0,32.8,0.258,42,1);
+INSERT INTO diabetes VALUES (66,5,99,74,27,0,29.0,0.203,32,0);
+INSERT INTO diabetes VALUES (67,0,109,88,30,0,32.5,0.855,38,1);
+INSERT INTO diabetes VALUES (68,2,109,92,0,0,42.7,0.845,54,0);
+INSERT INTO diabetes VALUES (69,1,95,66,13,38,19.6,0.334,25,0);
+INSERT INTO diabetes VALUES (70,4,146,85,27,100,28.9,0.189,27,0);
+INSERT INTO diabetes VALUES (71,2,100,66,20,90,32.9,0.867,28,1);
+INSERT INTO diabetes VALUES (72,5,139,64,35,140,28.6,0.411,26,0);
+INSERT INTO diabetes VALUES (73,13,126,90,0,0,43.4,0.583,42,1);
+INSERT INTO diabetes VALUES (74,4,129,86,20,270,35.1,0.231,23,0);
+INSERT INTO diabetes VALUES (75,1,79,75,30,0,32.0,0.396,22,0);
+INSERT INTO diabetes VALUES (76,1,0,48,20,0,24.7,0.140,22,0);
+INSERT INTO diabetes VALUES (77,7,62,78,0,0,32.6,0.391,41,0);
+INSERT INTO diabetes VALUES (78,5,95,72,33,0,37.7,0.370,27,0);
+INSERT INTO diabetes VALUES (79,0,131,0,0,0,43.2,0.270,26,1);
+INSERT INTO diabetes VALUES (80,2,112,66,22,0,25.0,0.307,24,0);
+INSERT INTO diabetes VALUES (81,3,113,44,13,0,22.4,0.140,22,0);
+INSERT INTO diabetes VALUES (82,2,74,0,0,0,0.0,0.102,22,0);
+INSERT INTO diabetes VALUES (83,7,83,78,26,71,29.3,0.767,36,0);
+INSERT INTO diabetes VALUES (84,0,101,65,28,0,24.6,0.237,22,0);
+INSERT INTO diabetes VALUES (85,5,137,108,0,0,48.8,0.227,37,1);
+INSERT INTO diabetes VALUES (86,2,110,74,29,125,32.4,0.698,27,0);
+INSERT INTO diabetes VALUES (87,13,106,72,54,0,36.6,0.178,45,0);
+INSERT INTO diabetes VALUES (88,2,100,68,25,71,38.5,0.324,26,0);
+INSERT INTO diabetes VALUES (89,15,136,70,32,110,37.1,0.153,43,1);
+INSERT INTO diabetes VALUES (90,1,107,68,19,0,26.5,0.165,24,0);
+INSERT INTO diabetes VALUES (91,1,80,55,0,0,19.1,0.258,21,0);
+INSERT INTO diabetes VALUES (92,4,123,80,15,176,32.0,0.443,34,0);
+INSERT INTO diabetes VALUES (93,7,81,78,40,48,46.7,0.261,42,0);
+INSERT INTO diabetes VALUES (94,4,134,72,0,0,23.8,0.277,60,1);
+INSERT INTO diabetes VALUES (95,2,142,82,18,64,24.7,0.761,21,0);
+INSERT INTO diabetes VALUES (96,6,144,72,27,228,33.9,0.255,40,0);
+INSERT INTO diabetes VALUES (97,2,92,62,28,0,31.6,0.130,24,0);
+INSERT INTO diabetes VALUES (98,1,71,48,18,76,20.4,0.323,22,0);
+INSERT INTO diabetes VALUES (99,6,93,50,30,64,28.7,0.356,23,0);
+INSERT INTO diabetes VALUES (100,1,122,90,51,220,49.7,0.325,31,1);
 
 
